@@ -22,6 +22,7 @@ private:
 public:
     MY_ESP8266()
     {
+        Serial.begin(9600);
         this->_nameWiFi = "ESP8266";
         this->_passWiFi = "123456789";
         this->_modeWiFi = ESP8266_MODE::ESP8266_STATION;
@@ -58,21 +59,6 @@ public:
         
     }
 
-    bool start()
-    {
-        switch (this->setMode)
-        {
-        case ESP8266_MODE::ESP8266_STATION:
-            WiFi.begin(this->nameWiFi, this->passWiFi);
-            break;
-        case ESP8266_MODE::ESP8266_ACCESS_POINT:
-            break;
-        case ESP8266_MODE::ESP8266_ALL:
-            break;
-
-        default:
-            ESP8266_MODE::ESP8266_OFF break;
-        }
-    }
+    
 };
 #endif
