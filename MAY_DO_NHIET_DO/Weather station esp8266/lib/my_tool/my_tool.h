@@ -33,7 +33,9 @@ public:
     void setMode(WiFiMode mode);
     WiFiMode getMode();
     wl_status_t getStatus();
+    
     void begin();
+    
     IPAddress getWifiIP();
     String getModeToString();
     void debug();
